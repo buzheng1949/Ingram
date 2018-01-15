@@ -1,6 +1,7 @@
 package com.buzheng.me.mapper;
 
 import com.buzheng.me.domain.entity.Area;
+import com.buzheng.me.domain.query.AreaQuery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -24,7 +25,7 @@ public class AreaMapperTest {
 
     @Test
     public void selectByPrimaryKey() throws Exception {
-        Area area = new Area();
+        AreaQuery area = new AreaQuery();
         area.setAreaId(3);
         area.setAreaName("东苑");
         area.setPriority(12);

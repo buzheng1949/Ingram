@@ -1,6 +1,7 @@
 package com.buzheng.me.mapper.provider;
 
 import com.buzheng.me.domain.entity.Area;
+import com.buzheng.me.domain.query.AreaQuery;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.jdbc.SQL;
 import org.slf4j.Logger;
@@ -22,7 +23,7 @@ public class AreaMapperProvider {
      * @param area 其实这里不要用domain来查比较好 另外写query比较靠谱
      * @return
      */
-    public String query(Area area) {
+    public String query(AreaQuery area) {
         Integer areaId = area.getAreaId();
         String areaDesc = area.getAreaDesc();
         String areaName = area.getAreaName();
