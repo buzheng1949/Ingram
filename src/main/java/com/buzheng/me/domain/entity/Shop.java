@@ -4,7 +4,7 @@ import lombok.Data;
 
 import java.util.Date;
 @Data
-public class Shop {
+public class  Shop {
     private Integer shopId;
 
     private Integer ownerId;
