@@ -21,9 +21,9 @@ public class AwardMapQuery {
 
     private String awardName;
 
-    private Date expireTime;
+    private Integer expireTime;
 
-    private Date createTime;
+    private Integer createTime;
 
     private Integer usedStatus;
 

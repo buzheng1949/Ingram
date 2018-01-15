@@ -13,7 +13,7 @@ public class PersonQuery {
 
     private String name;
 
-    private Date birthday;
+    private Integer birthday;
 
     private String gender;
 
@@ -29,9 +29,9 @@ public class PersonQuery {
 
     private Integer adminFlag;
 
-    private Date createTime;
+    private Integer createTime;
 
-    private Date lastEditTime;
+    private Integer lastEditTime;
 
     private Integer enableStatus;
 }

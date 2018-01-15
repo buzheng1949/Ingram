@@ -13,7 +13,7 @@ public class ProductImg {
 
     private Integer priority;
 
-    private Date createTime;
+    private Integer createTime;
 
     private Integer productId;
 }

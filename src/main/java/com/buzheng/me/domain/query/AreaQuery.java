@@ -17,7 +17,7 @@ public class AreaQuery {
 
     private Integer priority;
 
-    private Date createTime;
+    private Integer createTime;
 
-    private Date lastEditTime;
+    private Integer lastEditTime;
 }

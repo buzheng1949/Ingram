@@ -19,7 +19,7 @@ public class UserShopMapQuery {
 
     private String shopName;
 
-    private Date createTime;
+    private Integer createTime;
 
     private Integer point;
 }

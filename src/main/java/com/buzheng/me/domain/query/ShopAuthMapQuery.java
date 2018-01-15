@@ -21,9 +21,9 @@ public class ShopAuthMapQuery {
 
     private Integer titleFlag;
 
-    private Date createTime;
+    private Integer createTime;
 
-    private Date lastEditTime;
+    private Integer lastEditTime;
 
     private Integer enableStatus;
 }

@@ -23,9 +23,9 @@ public class ProductQuery {
 
     private Integer priority;
 
-    private Date createTime;
+    private Integer createTime;
 
-    private Date lastEditTime;
+    private Integer lastEditTime;
 
     private Integer enableStatus;
 

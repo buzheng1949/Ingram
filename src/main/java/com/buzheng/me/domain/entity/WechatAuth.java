@@ -11,6 +11,6 @@ public class WechatAuth {
 
     private String openId;
 
-    private Date createTime;
+    private Integer createTime;
 
 }

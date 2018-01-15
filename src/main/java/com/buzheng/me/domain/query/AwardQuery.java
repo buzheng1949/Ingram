@@ -21,11 +21,11 @@ public class AwardQuery {
 
     private Integer priority;
 
-    private Date createTime;
+    private Integer createTime;
 
-    private Date expireTime;
+    private Integer expireTime;
 
-    private Date lastEditTime;
+    private Integer lastEditTime;
 
     private Integer enableStatus;
 

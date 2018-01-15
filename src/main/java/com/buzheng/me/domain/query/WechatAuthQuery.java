@@ -15,5 +15,5 @@ public class WechatAuthQuery {
 
     private String openId;
 
-    private Date createTime;
+    private Integer createTime;
 }

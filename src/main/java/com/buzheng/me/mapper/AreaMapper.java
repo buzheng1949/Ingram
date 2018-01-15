@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.*;
 @Mapper
 public interface AreaMapper {
 
-    int insert(AreaQuery record);
 
 
 //    @Select("SELECT * FROM tb_area WHERE area_id = #{areaId} and area_name = #{areaName} and " +
@@ -23,5 +22,10 @@ public interface AreaMapper {
             @Result(property = "lastEditTime", column = "last_edit_time")
     })
     Area selectArea(AreaQuery record);
+
+
+    @InsertProvider(type = AreaMapperProvider.class,method ="insert" )
+    int insert(AreaQuery record);
+
 
 }

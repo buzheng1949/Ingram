@@ -17,8 +17,8 @@ public class HeadLine {
 
     private Integer enableStatus;
 
-    private Date createTime;
+    private Integer createTime;
 
-    private Date lastEditTime;
+    private Integer lastEditTime;
 
 }

@@ -17,7 +17,7 @@ public class UserProductMap {
 
     private String productName;
 
-    private Date createTime;
+    private Integer createTime;
 
     private Integer point;
 

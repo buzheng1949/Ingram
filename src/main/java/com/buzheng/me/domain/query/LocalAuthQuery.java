@@ -17,7 +17,7 @@ public class LocalAuthQuery {
 
     private String password;
 
-    private Date createTime;
+    private Integer createTime;
 
-    private Date lastEditTime;
+    private Integer lastEditTime;
 }
