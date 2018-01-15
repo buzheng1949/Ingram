@@ -1,10 +1,14 @@
-package com.buzheng.me.domain.entity;
+package com.buzheng.me.domain.query;
 
 import lombok.Data;
 
 import java.util.Date;
+
+/**
+ * Created by buzheng on 18/1/15.
+ */
 @Data
-public class UserShopMap {
+public class UserShopMapQuery {
     private Integer userShopId;
 
     private Integer userId;
@@ -18,6 +22,4 @@ public class UserShopMap {
     private Date createTime;
 
     private Integer point;
-
-
 }

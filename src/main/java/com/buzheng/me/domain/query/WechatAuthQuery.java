@@ -1,10 +1,14 @@
-package com.buzheng.me.domain.entity;
+package com.buzheng.me.domain.query;
 
 import lombok.Data;
 
 import java.util.Date;
+
+/**
+ * Created by buzheng on 18/1/15.
+ */
 @Data
-public class WechatAuth {
+public class WechatAuthQuery {
     private Integer wechatAuthId;
 
     private Integer userId;
@@ -12,5 +16,4 @@ public class WechatAuth {
     private String openId;
 
     private Date createTime;
-
 }

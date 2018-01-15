@@ -16,7 +16,7 @@ public class AreaMapperProvider {
     private Logger logger = LoggerFactory.getLogger(AreaMapperProvider.class);
 
     /**
-     * g
+     *
      * 查询语句 查询条件
      *
      * @param area 其实这里不要用domain来查比较好 另外写query比较靠谱
@@ -46,6 +46,7 @@ public class AreaMapperProvider {
         String matchSql = sql.toString();
         return matchSql;
     }
+
 
 
 }
