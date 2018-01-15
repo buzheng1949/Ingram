@@ -28,6 +28,12 @@ public class AdminController {
 
     private Logger logger = LoggerFactory.getLogger(AdminController.class);
 
+    /**
+     * 区域列表查询接口
+     *
+     * @param areaQuest
+     * @return
+     */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     @ResponseBody
     public ActionResult<AreaVO> list(AreaQuest areaQuest) {
