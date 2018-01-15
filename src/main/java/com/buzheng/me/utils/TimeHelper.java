@@ -12,6 +12,6 @@ public class TimeHelper {
      */
     public static Integer getCurrentTime() {
         Long currentTime = System.currentTimeMillis();
-        return Integer.parseInt(String.valueOf(currentTime));
+        return Integer.parseInt(String.valueOf(currentTime / 1000));
     }
 }

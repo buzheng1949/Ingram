@@ -18,6 +18,8 @@ import java.util.Date;
  */
 public class AreaMapperProvider {
 
+    public static final String TABLE = "tb_area";
+
     private Logger logger = LoggerFactory.getLogger(AreaMapperProvider.class);
 
     /**
@@ -34,7 +36,7 @@ public class AreaMapperProvider {
         SQL sql = new SQL() {
             {
                 SELECT("*");
-                FROM("tb_area");
+                FROM(TABLE);
                 WHERE("area_id = " + areaId);
                 if (StringUtils.isNotEmpty(areaDesc)) {
                     WHERE("area_desc = '" + areaDesc + "'");
@@ -69,7 +71,7 @@ public class AreaMapperProvider {
         String values = SQLHelper.buildValues(areaDesc, areaName, priority, createTime, lastEditTime);
         SQL sql = new SQL() {
             {
-                INSERT_INTO("tb_area");
+                INSERT_INTO(TABLE);
                 VALUES(columns, values);
             }
         };
@@ -89,7 +91,7 @@ public class AreaMapperProvider {
         Integer lastEditTime = TimeHelper.getCurrentTime();
         SQL sql = new SQL() {
             {
-                UPDATE("tb_area");
+                UPDATE(TABLE);
                 if (StringUtils.isNotEmpty(areaDesc)) {
                     SET("area_desc = '" + areaDesc + "'");
                 }
