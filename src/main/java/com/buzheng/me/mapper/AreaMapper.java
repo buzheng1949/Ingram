@@ -27,5 +27,8 @@ public interface AreaMapper {
     @InsertProvider(type = AreaMapperProvider.class,method ="insert" )
     int insert(AreaQuery record);
 
+    @InsertProvider(type = AreaMapperProvider.class,method = "update")
+    int update(AreaQuery areaQuery);
+
 
 }

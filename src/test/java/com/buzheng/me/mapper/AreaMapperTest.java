@@ -4,6 +4,7 @@ import com.buzheng.me.domain.entity.Area;
 import com.buzheng.me.domain.query.AreaQuery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runner.Runner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,12 +44,24 @@ public class AreaMapperTest {
         areaQuery.setPriority(12);
         areaQuery.setAreaDesc("广州");
         areaQuery.setAreaName("广州");
-        Long time = System.currentTimeMillis()/1000;
+        Long time = System.currentTimeMillis() / 1000;
         areaQuery.setCreateTime(Integer.valueOf(String.valueOf(time)));
         areaQuery.setLastEditTime(Integer.valueOf(String.valueOf(time)));
         int res = areaMapper.insert(areaQuery);
         if (res != 1) {
             throw new RuntimeException("the insert test is failed");
+        }
+    }
+
+    @Test
+    public void update() {
+        AreaQuery areaQuery = new AreaQuery();
+        areaQuery.setAreaName("广州");
+        areaQuery.setAreaDesc("美味天下");
+        areaQuery.setPriority(19);
+        int res = areaMapper.update(areaQuery);
+        if (res != 1) {
+            throw new RuntimeException("the record is not exits or the update is failed");
         }
     }
 

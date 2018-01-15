@@ -3,6 +3,7 @@ package com.buzheng.me.mapper.provider;
 import com.buzheng.me.domain.entity.Area;
 import com.buzheng.me.domain.query.AreaQuery;
 import com.buzheng.me.utils.SQLHelper;
+import com.buzheng.me.utils.TimeHelper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.jdbc.SQL;
 import org.slf4j.Logger;
@@ -22,7 +23,7 @@ public class AreaMapperProvider {
     /**
      * 查询语句 查询条件
      *
-     * @param area 其实这里不要用domain来查比较好 另外写query比较靠谱
+     * @param area 查询条件
      * @return
      */
     public String query(AreaQuery area) {
@@ -46,8 +47,7 @@ public class AreaMapperProvider {
                 }
             }
         };
-        String matchSql = sql.toString();
-        return matchSql;
+        return sql.toString();
     }
 
     /**
@@ -57,22 +57,51 @@ public class AreaMapperProvider {
      * @return
      */
     public String insert(AreaQuery areaQuery) {
-        String areaDesc = areaQuery.getAreaDesc();
         String areaName = areaQuery.getAreaName();
+        if (StringUtils.isEmpty(areaName)) {
+            throw new RuntimeException("the area_name is must not be empey");
+        }
+        String areaDesc = areaQuery.getAreaDesc();
         Integer priority = areaQuery.getPriority();
         Integer createTime = areaQuery.getCreateTime();
         Integer lastEditTime = areaQuery.getLastEditTime();
         String columns = "area_desc,area_name,priority,create_time,last_edit_time";
-//        String values = "'"+areaDesc +"'"+ "," +"'"+ areaName + "'"+"," +"'"+ priority + "'"+"," +"'"+ createTime +"'" +"," +"'"+ lastEditTime+"'";
-        String values = SQLHelper.buildValues(areaDesc,areaName,priority,createTime,lastEditTime);
+        String values = SQLHelper.buildValues(areaDesc, areaName, priority, createTime, lastEditTime);
         SQL sql = new SQL() {
             {
                 INSERT_INTO("tb_area");
                 VALUES(columns, values);
             }
         };
-        logger.error(sql.toString());
         return sql.toString();
+    }
+
+    /**
+     * 更新区域信息
+     *
+     * @param areaQuery
+     * @return
+     */
+    public String update(AreaQuery areaQuery) {
+        String areaDesc = areaQuery.getAreaDesc();
+        String areaName = areaQuery.getAreaName();
+        Integer priority = areaQuery.getPriority();
+        Integer lastEditTime = TimeHelper.getCurrentTime();
+        SQL sql = new SQL() {
+            {
+                UPDATE("tb_area");
+                if (StringUtils.isNotEmpty(areaDesc)) {
+                    SET("area_desc = '" + areaDesc + "'");
+                }
+                if (priority != null) {
+                    SET("priority = '" + priority + "'");
+                }
+                SET("last_edit_time= '" + lastEditTime + "'");
+                WHERE("area_name = '" + areaName + "'");
+            }
+        };
+        return sql.toString();
+
     }
 
 
