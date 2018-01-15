@@ -37,7 +37,9 @@ public class AreaMapperProvider {
             {
                 SELECT("*");
                 FROM(TABLE);
-                WHERE("area_id = " + areaId);
+                if (areaId != null) {
+                    WHERE("area_id = " + areaId);
+                }
                 if (StringUtils.isNotEmpty(areaDesc)) {
                     WHERE("area_desc = '" + areaDesc + "'");
                 }
@@ -51,6 +53,7 @@ public class AreaMapperProvider {
         };
         return sql.toString();
     }
+
 
     /**
      * 插入语句
