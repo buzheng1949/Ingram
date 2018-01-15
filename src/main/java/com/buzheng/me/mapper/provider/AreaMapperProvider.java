@@ -1,13 +1,10 @@
 package com.buzheng.me.mapper.provider;
 
-import com.buzheng.me.domain.Area;
-import com.buzheng.me.mapper.AreaMapper;
+import com.buzheng.me.domain.entity.Area;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.jdbc.SQL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Date;
 
 
 /**
@@ -18,7 +15,8 @@ public class AreaMapperProvider {
 
     private Logger logger = LoggerFactory.getLogger(AreaMapperProvider.class);
 
-    /**g
+    /**
+     * g
      * 查询语句 查询条件
      *
      * @param area 其实这里不要用domain来查比较好 另外写query比较靠谱
@@ -48,4 +46,6 @@ public class AreaMapperProvider {
         String matchSql = sql.toString();
         return matchSql;
     }
+
+
 }

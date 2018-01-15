@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.buzheng.me.mapper.AwardMapper" >
-  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.Award" >
+  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.entity.Award" >
     <constructor >
       <idArg column="award_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="award_name" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -30,7 +30,7 @@
     delete from tb_award
     where award_id = #{awardId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.buzheng.me.domain.Award" >
+  <insert id="insert" parameterType="com.buzheng.me.domain.entity.Award" >
     insert into tb_award (award_id, award_name, award_desc, 
       award_img, point, priority, 
       create_time, expire_time, last_edit_time, 
@@ -40,7 +40,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{expireTime,jdbcType=TIMESTAMP}, #{lastEditTime,jdbcType=TIMESTAMP}, 
       #{enableStatus,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.buzheng.me.domain.Award" >
+  <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.Award" >
     insert into tb_award
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="awardId != null" >
@@ -113,7 +113,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.Award" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.entity.Award" >
     update tb_award
     <set >
       <if test="awardName != null" >
@@ -149,7 +149,7 @@
     </set>
     where award_id = #{awardId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.Award" >
+  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.entity.Award" >
     update tb_award
     set award_name = #{awardName,jdbcType=VARCHAR},
       award_desc = #{awardDesc,jdbcType=VARCHAR},

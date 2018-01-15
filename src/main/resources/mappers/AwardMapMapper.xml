@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.buzheng.me.mapper.AwardMapMapper" >
-  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.AwardMap" >
+  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.entity.AwardMap" >
     <constructor >
       <idArg column="user_award_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -29,7 +29,7 @@
     delete from tb_user_award_map
     where user_award_id = #{userAwardId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.buzheng.me.domain.AwardMap" >
+  <insert id="insert" parameterType="com.buzheng.me.domain.entity.AwardMap" >
     insert into tb_user_award_map (user_award_id, user_id, award_id, 
       shop_id, user_name, award_name, 
       expire_time, create_time, used_status, 
@@ -39,7 +39,7 @@
       #{expireTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{usedStatus,jdbcType=INTEGER}, 
       #{point,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.buzheng.me.domain.AwardMap" >
+  <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.AwardMap" >
     insert into tb_user_award_map
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userAwardId != null" >
@@ -106,7 +106,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.AwardMap" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.entity.AwardMap" >
     update tb_user_award_map
     <set >
       <if test="userId != null" >
@@ -139,7 +139,7 @@
     </set>
     where user_award_id = #{userAwardId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.AwardMap" >
+  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.entity.AwardMap" >
     update tb_user_award_map
     set user_id = #{userId,jdbcType=INTEGER},
       award_id = #{awardId,jdbcType=INTEGER},

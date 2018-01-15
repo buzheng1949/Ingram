@@ -1,6 +1,6 @@
 package com.buzheng.me.mapper;
 
-import com.buzheng.me.domain.AwardMap;
+import com.buzheng.me.domain.entity.AwardMap;
 
 public interface AwardMapMapper {
     int deleteByPrimaryKey(Integer userAwardId);

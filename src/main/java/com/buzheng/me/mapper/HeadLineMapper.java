@@ -1,6 +1,6 @@
 package com.buzheng.me.mapper;
 
-import com.buzheng.me.domain.HeadLine;
+import com.buzheng.me.domain.entity.HeadLine;
 
 public interface HeadLineMapper {
     int deleteByPrimaryKey(Integer lineId);

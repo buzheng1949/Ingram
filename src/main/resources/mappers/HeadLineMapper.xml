@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.buzheng.me.mapper.HeadLineMapper" >
-  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.HeadLine" >
+  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.entity.HeadLine" >
     <constructor >
       <idArg column="line_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="line_name" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -26,7 +26,7 @@
     delete from tb_head_line
     where line_id = #{lineId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.buzheng.me.domain.HeadLine" >
+  <insert id="insert" parameterType="com.buzheng.me.domain.entity.HeadLine" >
     insert into tb_head_line (line_id, line_name, line_link, 
       line_img, priority, enable_status, 
       create_time, last_edit_time)
@@ -34,7 +34,7 @@
       #{lineImg,jdbcType=VARCHAR}, #{priority,jdbcType=INTEGER}, #{enableStatus,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP}, #{lastEditTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.buzheng.me.domain.HeadLine" >
+  <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.HeadLine" >
     insert into tb_head_line
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="lineId != null" >
@@ -89,7 +89,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.HeadLine" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.entity.HeadLine" >
     update tb_head_line
     <set >
       <if test="lineName != null" >
@@ -116,7 +116,7 @@
     </set>
     where line_id = #{lineId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.HeadLine" >
+  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.entity.HeadLine" >
     update tb_head_line
     set line_name = #{lineName,jdbcType=VARCHAR},
       line_link = #{lineLink,jdbcType=VARCHAR},

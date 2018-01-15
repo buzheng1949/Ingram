@@ -1,6 +1,6 @@
 package com.buzheng.me.mapper;
 
-import com.buzheng.me.domain.UserProductMap;
+import com.buzheng.me.domain.entity.UserProductMap;
 
 public interface UserProductMapMapper {
     int deleteByPrimaryKey(Integer userProductId);

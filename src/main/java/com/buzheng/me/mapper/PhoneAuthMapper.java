@@ -1,6 +1,6 @@
 package com.buzheng.me.mapper;
 
-import com.buzheng.me.domain.PhoneAuth;
+import com.buzheng.me.domain.entity.PhoneAuth;
 
 public interface PhoneAuthMapper {
     int deleteByPrimaryKey(Integer phoneAuthId);

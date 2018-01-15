@@ -1,4 +1,4 @@
-package com.buzheng.me.domain;
+package com.buzheng.me.domain.entity;
 
 import lombok.Data;
 

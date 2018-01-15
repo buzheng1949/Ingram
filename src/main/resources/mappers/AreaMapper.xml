@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.buzheng.me.mapper.AreaMapper" >
-  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.Area" >
+  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.entity.Area" >
     <constructor >
       <idArg column="area_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="area_name" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -24,7 +24,7 @@
     delete from tb_area
     where area_id = #{areaId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.buzheng.me.domain.Area" >
+  <insert id="insert" parameterType="com.buzheng.me.domain.entity.Area" >
     insert into tb_area (area_id, area_name, area_desc, 
       priority, create_time, last_edit_time
       )
@@ -32,7 +32,7 @@
       #{priority,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{lastEditTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.buzheng.me.domain.Area" >
+  <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.Area" >
     insert into tb_area
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="areaId != null" >
@@ -75,7 +75,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.Area" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.entity.Area" >
     update tb_area
     <set >
       <if test="areaName != null" >
@@ -96,7 +96,7 @@
     </set>
     where area_id = #{areaId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.Area" >
+  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.entity.Area" >
     update tb_area
     set area_name = #{areaName,jdbcType=VARCHAR},
       area_desc = #{areaDesc,jdbcType=VARCHAR},

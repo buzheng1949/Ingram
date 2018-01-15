@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.buzheng.me.mapper.WechatAuthMapper" >
-  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.WechatAuth" >
+  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.entity.WechatAuth" >
     <constructor >
       <idArg column="wechat_auth_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -22,13 +22,13 @@
     delete from tb_wechat_auth
     where wechat_auth_id = #{wechatAuthId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.buzheng.me.domain.WechatAuth" >
+  <insert id="insert" parameterType="com.buzheng.me.domain.entity.WechatAuth" >
     insert into tb_wechat_auth (wechat_auth_id, user_id, open_id, 
       create_time)
     values (#{wechatAuthId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.buzheng.me.domain.WechatAuth" >
+  <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.WechatAuth" >
     insert into tb_wechat_auth
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="wechatAuthId != null" >
@@ -59,7 +59,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.WechatAuth" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.entity.WechatAuth" >
     update tb_wechat_auth
     <set >
       <if test="userId != null" >
@@ -74,7 +74,7 @@
     </set>
     where wechat_auth_id = #{wechatAuthId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.WechatAuth" >
+  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.entity.WechatAuth" >
     update tb_wechat_auth
     set user_id = #{userId,jdbcType=INTEGER},
       open_id = #{openId,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.buzheng.me.mapper.PersonMapper" >
-  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.Person" >
+  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.entity.Person" >
     <constructor >
       <idArg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -32,7 +32,7 @@
     delete from tb_person_info
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.buzheng.me.domain.Person" >
+  <insert id="insert" parameterType="com.buzheng.me.domain.entity.Person" >
     insert into tb_person_info (user_id, name, birthday, 
       gender, phone, email, 
       profile_img, customer_flag, shop_owner_flag, 
@@ -44,7 +44,7 @@
       #{adminFlag,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{lastEditTime,jdbcType=TIMESTAMP}, 
       #{enableStatus,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.buzheng.me.domain.Person" >
+  <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.Person" >
     insert into tb_person_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -129,7 +129,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.Person" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.entity.Person" >
     update tb_person_info
     <set >
       <if test="name != null" >
@@ -171,7 +171,7 @@
     </set>
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.Person" >
+  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.entity.Person" >
     update tb_person_info
     set name = #{name,jdbcType=VARCHAR},
       birthday = #{birthday,jdbcType=TIMESTAMP},

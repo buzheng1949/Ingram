@@ -1,6 +1,6 @@
 package com.buzheng.me.mapper;
 
-import com.buzheng.me.domain.ProductImg;
+import com.buzheng.me.domain.entity.ProductImg;
 
 public interface ProductImgMapper {
     int deleteByPrimaryKey(Integer productImgId);

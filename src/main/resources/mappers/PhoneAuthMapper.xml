@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.buzheng.me.mapper.PhoneAuthMapper" >
-  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.PhoneAuth" >
+  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.entity.PhoneAuth" >
     <constructor >
       <idArg column="phone_auth_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -22,13 +22,13 @@
     delete from tb_phone_auth
     where phone_auth_id = #{phoneAuthId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.buzheng.me.domain.PhoneAuth" >
+  <insert id="insert" parameterType="com.buzheng.me.domain.entity.PhoneAuth" >
     insert into tb_phone_auth (phone_auth_id, user_id, phone, 
       auth_number)
     values (#{phoneAuthId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, 
       #{authNumber,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.buzheng.me.domain.PhoneAuth" >
+  <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.PhoneAuth" >
     insert into tb_phone_auth
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="phoneAuthId != null" >
@@ -59,7 +59,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.PhoneAuth" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.entity.PhoneAuth" >
     update tb_phone_auth
     <set >
       <if test="userId != null" >
@@ -74,7 +74,7 @@
     </set>
     where phone_auth_id = #{phoneAuthId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.PhoneAuth" >
+  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.entity.PhoneAuth" >
     update tb_phone_auth
     set user_id = #{userId,jdbcType=INTEGER},
       phone = #{phone,jdbcType=VARCHAR},

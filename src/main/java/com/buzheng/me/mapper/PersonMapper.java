@@ -1,6 +1,6 @@
 package com.buzheng.me.mapper;
 
-import com.buzheng.me.domain.Person;
+import com.buzheng.me.domain.entity.Person;
 
 public interface PersonMapper {
     int deleteByPrimaryKey(Integer userId);

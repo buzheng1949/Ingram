@@ -1,6 +1,6 @@
 package com.buzheng.me.mapper;
 
-import com.buzheng.me.domain.WechatAuth;
+import com.buzheng.me.domain.entity.WechatAuth;
 
 public interface WechatAuthMapper {
     int deleteByPrimaryKey(Integer wechatAuthId);

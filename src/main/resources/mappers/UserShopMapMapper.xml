@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.buzheng.me.mapper.UserShopMapMapper" >
-  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.UserShopMap" >
+  <resultMap id="BaseResultMap" type="com.buzheng.me.domain.entity.UserShopMap" >
     <constructor >
       <idArg column="user_shop_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -25,7 +25,7 @@
     delete from tb_user_shop_map
     where user_shop_id = #{userShopId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.buzheng.me.domain.UserShopMap" >
+  <insert id="insert" parameterType="com.buzheng.me.domain.entity.UserShopMap" >
     insert into tb_user_shop_map (user_shop_id, user_id, shop_id, 
       user_name, shop_name, create_time, 
       point)
@@ -33,7 +33,7 @@
       #{userName,jdbcType=VARCHAR}, #{shopName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{point,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.buzheng.me.domain.UserShopMap" >
+  <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.UserShopMap" >
     insert into tb_user_shop_map
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userShopId != null" >
@@ -82,7 +82,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.UserShopMap" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.buzheng.me.domain.entity.UserShopMap" >
     update tb_user_shop_map
     <set >
       <if test="userId != null" >
@@ -106,7 +106,7 @@
     </set>
     where user_shop_id = #{userShopId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.UserShopMap" >
+  <update id="updateByPrimaryKey" parameterType="com.buzheng.me.domain.entity.UserShopMap" >
     update tb_user_shop_map
     set user_id = #{userId,jdbcType=INTEGER},
       shop_id = #{shopId,jdbcType=INTEGER},
