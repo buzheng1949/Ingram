@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by buzheng on 18/1/15.
@@ -28,10 +29,10 @@ public class AreaMapperTest {
     @Test
     public void selectByPrimaryKey() throws Exception {
         AreaQuery area = new AreaQuery();
-        area.setAreaId(1);
-        area.setAreaName("北京");
-        area.setPriority(1);
-        Area result = areaMapper.selectArea(area);
+//        area.setAreaId(1);
+//        area.setAreaName("北京");
+//        area.setPriority(1);
+        List<Area> result = areaMapper.selectArea(area);
         if (result == null) {
             logger.error("the select is error");
         }

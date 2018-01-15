@@ -8,6 +8,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
  * Created by buzheng on 18/1/15.
  * 服务实现类
  */
+@Service("areaApi")
 public class AreaApiImpl implements AreaApi {
 
     private Logger logger = LoggerFactory.getLogger(AreaApiImpl.class);
