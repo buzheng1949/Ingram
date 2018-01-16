@@ -1,6 +1,6 @@
 package com.buzheng.me.mapper;
 
-import com.buzheng.me.domain.Person;
+import com.buzheng.me.domain.entity.Person;
 import com.buzheng.me.domain.query.PersonQuery;
 import com.buzheng.me.utils.TimeHelper;
 import org.junit.Test;
