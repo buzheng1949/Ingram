@@ -14,18 +14,20 @@ public enum ShopStatus {
     SUCCESS(1003, "操作成功"),
     PASS(1004, "认证通过"),
     ERROR(1005, "内部异常");
-    @Getter
-    @Setter
+
     /**
      * 店铺状态值
      */
-    private Integer status;
-
     @Getter
     @Setter
+    private Integer status;
+
+
     /**
      * 信息
      */
+    @Getter
+    @Setter
     private String message;
 
     private ShopStatus(Integer status, String message) {
