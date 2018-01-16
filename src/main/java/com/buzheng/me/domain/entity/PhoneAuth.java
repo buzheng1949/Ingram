@@ -11,4 +11,12 @@ public class PhoneAuth {
     private String phone;
 
     private String authNumber;
+
+    public PhoneAuth(Integer phoneAuthId, Integer userId, String phone, String authNumber) {
+        this.phoneAuthId = phoneAuthId;
+        this.userId = userId;
+        this.phone = phone;
+        this.authNumber = authNumber;
+    }
+
 }

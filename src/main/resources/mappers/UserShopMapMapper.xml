@@ -8,7 +8,7 @@
       <arg column="shop_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="shop_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="point" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
@@ -30,7 +30,7 @@
       user_name, shop_name, create_time, 
       point)
     values (#{userShopId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}, 
-      #{userName,jdbcType=VARCHAR}, #{shopName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{userName,jdbcType=VARCHAR}, #{shopName,jdbcType=VARCHAR}, #{createTime,jdbcType=INTEGER}, 
       #{point,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.UserShopMap" >
@@ -75,7 +75,7 @@
         #{shopName,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=INTEGER},
       </if>
       <if test="point != null" >
         #{point,jdbcType=INTEGER},
@@ -98,7 +98,7 @@
         shop_name = #{shopName,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=INTEGER},
       </if>
       <if test="point != null" >
         point = #{point,jdbcType=INTEGER},
@@ -112,7 +112,7 @@
       shop_id = #{shopId,jdbcType=INTEGER},
       user_name = #{userName,jdbcType=VARCHAR},
       shop_name = #{shopName,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=INTEGER},
       point = #{point,jdbcType=INTEGER}
     where user_shop_id = #{userShopId,jdbcType=INTEGER}
   </update>

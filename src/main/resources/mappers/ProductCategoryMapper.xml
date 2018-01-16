@@ -7,8 +7,8 @@
       <arg column="product_category_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="product_category_desc" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="priority" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="last_edit_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="last_edit_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="shop_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
@@ -31,8 +31,8 @@
       product_category_desc, priority, create_time, 
       last_edit_time, shop_id)
     values (#{productCategoryId,jdbcType=INTEGER}, #{productCategoryName,jdbcType=VARCHAR}, 
-      #{productCategoryDesc,jdbcType=VARCHAR}, #{priority,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{lastEditTime,jdbcType=TIMESTAMP}, #{shopId,jdbcType=INTEGER})
+      #{productCategoryDesc,jdbcType=VARCHAR}, #{priority,jdbcType=INTEGER}, #{createTime,jdbcType=INTEGER}, 
+      #{lastEditTime,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.ProductCategory" >
     insert into tb_product_category
@@ -73,10 +73,10 @@
         #{priority,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=INTEGER},
       </if>
       <if test="lastEditTime != null" >
-        #{lastEditTime,jdbcType=TIMESTAMP},
+        #{lastEditTime,jdbcType=INTEGER},
       </if>
       <if test="shopId != null" >
         #{shopId,jdbcType=INTEGER},
@@ -96,10 +96,10 @@
         priority = #{priority,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=INTEGER},
       </if>
       <if test="lastEditTime != null" >
-        last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+        last_edit_time = #{lastEditTime,jdbcType=INTEGER},
       </if>
       <if test="shopId != null" >
         shop_id = #{shopId,jdbcType=INTEGER},
@@ -112,8 +112,8 @@
     set product_category_name = #{productCategoryName,jdbcType=VARCHAR},
       product_category_desc = #{productCategoryDesc,jdbcType=VARCHAR},
       priority = #{priority,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=INTEGER},
+      last_edit_time = #{lastEditTime,jdbcType=INTEGER},
       shop_id = #{shopId,jdbcType=INTEGER}
     where product_category_id = #{productCategoryId,jdbcType=INTEGER}
   </update>

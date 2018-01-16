@@ -1,9 +1,8 @@
 package com.buzheng.me.mapper;
 
-import com.buzheng.me.domain.entity.Person;
+import com.buzheng.me.domain.Person;
 import com.buzheng.me.domain.query.PersonQuery;
 import com.buzheng.me.utils.TimeHelper;
-import org.assertj.core.util.DateUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -11,10 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by buzheng on 18/1/15.

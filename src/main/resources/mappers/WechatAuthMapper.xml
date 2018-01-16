@@ -6,7 +6,7 @@
       <idArg column="wechat_auth_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="open_id" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
@@ -26,7 +26,7 @@
     insert into tb_wechat_auth (wechat_auth_id, user_id, open_id, 
       create_time)
     values (#{wechatAuthId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP})
+      #{createTime,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.WechatAuth" >
     insert into tb_wechat_auth
@@ -55,7 +55,7 @@
         #{openId,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -69,7 +69,7 @@
         open_id = #{openId,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=INTEGER},
       </if>
     </set>
     where wechat_auth_id = #{wechatAuthId,jdbcType=INTEGER}
@@ -78,7 +78,7 @@
     update tb_wechat_auth
     set user_id = #{userId,jdbcType=INTEGER},
       open_id = #{openId,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=INTEGER}
     where wechat_auth_id = #{wechatAuthId,jdbcType=INTEGER}
   </update>
 </mapper>

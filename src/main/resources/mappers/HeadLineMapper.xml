@@ -9,8 +9,8 @@
       <arg column="line_img" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="priority" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="enable_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="last_edit_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="last_edit_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
@@ -32,7 +32,7 @@
       create_time, last_edit_time)
     values (#{lineId,jdbcType=INTEGER}, #{lineName,jdbcType=VARCHAR}, #{lineLink,jdbcType=VARCHAR}, 
       #{lineImg,jdbcType=VARCHAR}, #{priority,jdbcType=INTEGER}, #{enableStatus,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{lastEditTime,jdbcType=TIMESTAMP})
+      #{createTime,jdbcType=INTEGER}, #{lastEditTime,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.HeadLine" >
     insert into tb_head_line
@@ -82,10 +82,10 @@
         #{enableStatus,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=INTEGER},
       </if>
       <if test="lastEditTime != null" >
-        #{lastEditTime,jdbcType=TIMESTAMP},
+        #{lastEditTime,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -108,10 +108,10 @@
         enable_status = #{enableStatus,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=INTEGER},
       </if>
       <if test="lastEditTime != null" >
-        last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+        last_edit_time = #{lastEditTime,jdbcType=INTEGER},
       </if>
     </set>
     where line_id = #{lineId,jdbcType=INTEGER}
@@ -123,8 +123,8 @@
       line_img = #{lineImg,jdbcType=VARCHAR},
       priority = #{priority,jdbcType=INTEGER},
       enable_status = #{enableStatus,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=INTEGER},
+      last_edit_time = #{lastEditTime,jdbcType=INTEGER}
     where line_id = #{lineId,jdbcType=INTEGER}
   </update>
 </mapper>

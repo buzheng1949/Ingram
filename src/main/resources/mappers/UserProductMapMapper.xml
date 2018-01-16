@@ -9,7 +9,7 @@
       <arg column="shop_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="product_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="point" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
@@ -33,7 +33,7 @@
       create_time, point)
     values (#{userProductId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, 
       #{shopId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{productName,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{point,jdbcType=INTEGER})
+      #{createTime,jdbcType=INTEGER}, #{point,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.UserProductMap" >
     insert into tb_user_product_map
@@ -83,7 +83,7 @@
         #{productName,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=INTEGER},
       </if>
       <if test="point != null" >
         #{point,jdbcType=INTEGER},
@@ -109,7 +109,7 @@
         product_name = #{productName,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=INTEGER},
       </if>
       <if test="point != null" >
         point = #{point,jdbcType=INTEGER},
@@ -124,7 +124,7 @@
       shop_id = #{shopId,jdbcType=INTEGER},
       user_name = #{userName,jdbcType=VARCHAR},
       product_name = #{productName,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=INTEGER},
       point = #{point,jdbcType=INTEGER}
     where user_product_id = #{userProductId,jdbcType=INTEGER}
   </update>

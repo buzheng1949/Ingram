@@ -7,8 +7,8 @@
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="last_edit_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="last_edit_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
@@ -29,7 +29,7 @@
       password, create_time, last_edit_time
       )
     values (#{localAuthId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastEditTime,jdbcType=TIMESTAMP}
+      #{password,jdbcType=VARCHAR}, #{createTime,jdbcType=INTEGER}, #{lastEditTime,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.LocalAuth" >
@@ -68,10 +68,10 @@
         #{password,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=INTEGER},
       </if>
       <if test="lastEditTime != null" >
-        #{lastEditTime,jdbcType=TIMESTAMP},
+        #{lastEditTime,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -88,10 +88,10 @@
         password = #{password,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=INTEGER},
       </if>
       <if test="lastEditTime != null" >
-        last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+        last_edit_time = #{lastEditTime,jdbcType=INTEGER},
       </if>
     </set>
     where local_auth_id = #{localAuthId,jdbcType=INTEGER}
@@ -101,8 +101,8 @@
     set user_id = #{userId,jdbcType=INTEGER},
       user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=INTEGER},
+      last_edit_time = #{lastEditTime,jdbcType=INTEGER}
     where local_auth_id = #{localAuthId,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -74,7 +74,8 @@ public class ShopProvider {
         Integer categoryId = shopQuery.getShopCategoryId();
         SQL sql = new SQL() {
             {
-                SELECT("*");
+                SELECT("shop_id,owner_id,area_id,shop_category_id,parent_category_id,shop_name,shop_desc," +
+                        "shop_addr,phone,shop_img,longitude,latitude,create_time,last_edit_time,enable_status,advice,priority");
                 FROM(TABLE);
                 if (shopId != null) {
                     WHERE("shop_id = " + shopId);

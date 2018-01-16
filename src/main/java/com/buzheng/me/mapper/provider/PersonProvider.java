@@ -57,7 +57,7 @@ public class PersonProvider {
         }
         SQL sql = new SQL() {
             {
-                SELECT("*");
+                SELECT("admin_flag,birthday,customer_flag,email,gender,name,user_id,shop_owner_flag,enable_status,phone,profile_img,create_time,last_edit_time");
                 FROM(TABLE);
                 WHERE("phone = " + phone);
             }

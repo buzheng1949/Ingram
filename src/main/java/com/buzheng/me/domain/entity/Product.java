@@ -2,7 +2,6 @@ package com.buzheng.me.domain.entity;
 
 import lombok.Data;
 
-import java.util.Date;
 @Data
 public class Product {
     private Integer productId;
@@ -30,5 +29,21 @@ public class Product {
     private Integer productCategoryId;
 
     private Integer shopId;
+
+    public Product(Integer productId, String productName, String productDesc, String imgAddr, String normalPrice, String promotionPrice, Integer priority, Integer createTime, Integer lastEditTime, Integer enableStatus, Integer point, Integer productCategoryId, Integer shopId) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productDesc = productDesc;
+        this.imgAddr = imgAddr;
+        this.normalPrice = normalPrice;
+        this.promotionPrice = promotionPrice;
+        this.priority = priority;
+        this.createTime = createTime;
+        this.lastEditTime = lastEditTime;
+        this.enableStatus = enableStatus;
+        this.point = point;
+        this.productCategoryId = productCategoryId;
+        this.shopId = shopId;
+    }
 
 }

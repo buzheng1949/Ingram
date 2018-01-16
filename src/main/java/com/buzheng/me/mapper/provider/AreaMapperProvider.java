@@ -35,7 +35,7 @@ public class AreaMapperProvider {
         Integer priority = area.getPriority();
         SQL sql = new SQL() {
             {
-                SELECT("*");
+                SELECT("area_desc,area_name,priority,create_time,last_edit_time");
                 FROM(TABLE);
                 if (areaId != null) {
                     WHERE("area_id = " + areaId);

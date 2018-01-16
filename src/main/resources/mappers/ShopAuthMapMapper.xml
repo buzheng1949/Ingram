@@ -9,8 +9,8 @@
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="title_flag" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="last_edit_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="last_edit_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="enable_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
@@ -35,7 +35,7 @@
       )
     values (#{shopAuthId,jdbcType=INTEGER}, #{employeeId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}, 
       #{name,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{titleFlag,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{lastEditTime,jdbcType=TIMESTAMP}, #{enableStatus,jdbcType=INTEGER}
+      #{createTime,jdbcType=INTEGER}, #{lastEditTime,jdbcType=INTEGER}, #{enableStatus,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.buzheng.me.domain.entity.ShopAuthMap" >
@@ -89,10 +89,10 @@
         #{titleFlag,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=INTEGER},
       </if>
       <if test="lastEditTime != null" >
-        #{lastEditTime,jdbcType=TIMESTAMP},
+        #{lastEditTime,jdbcType=INTEGER},
       </if>
       <if test="enableStatus != null" >
         #{enableStatus,jdbcType=INTEGER},
@@ -118,10 +118,10 @@
         title_flag = #{titleFlag,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=INTEGER},
       </if>
       <if test="lastEditTime != null" >
-        last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+        last_edit_time = #{lastEditTime,jdbcType=INTEGER},
       </if>
       <if test="enableStatus != null" >
         enable_status = #{enableStatus,jdbcType=INTEGER},
@@ -136,8 +136,8 @@
       name = #{name,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
       title_flag = #{titleFlag,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=INTEGER},
+      last_edit_time = #{lastEditTime,jdbcType=INTEGER},
       enable_status = #{enableStatus,jdbcType=INTEGER}
     where shop_auth_id = #{shopAuthId,jdbcType=INTEGER}
   </update>
