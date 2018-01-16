@@ -21,12 +21,12 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin/area/")
-public class AdminController {
+public class AreaController {
 
     @Autowired
     private AreaApi areaApi;
 
-    private Logger logger = LoggerFactory.getLogger(AdminController.class);
+    private Logger logger = LoggerFactory.getLogger(AreaController.class);
 
     /**
      * 区域列表查询接口
