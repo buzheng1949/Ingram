@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Created by buzheng on 18/1/16.
+ * 对外透出用的VO
  */
 @Data
 public class ShopVO {
@@ -25,4 +26,6 @@ public class ShopVO {
      * 下一页页码
      */
     private Integer next;
+
+
 }

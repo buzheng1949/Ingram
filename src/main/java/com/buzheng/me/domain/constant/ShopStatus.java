@@ -13,6 +13,7 @@ public enum ShopStatus {
     ILLEGAL(1002, "非法店铺"),
     SUCCESS(1003, "操作成功"),
     PASS(1004, "认证通过"),
+    PARAMS_EMPTY(1006, "参数丢失"),
     ERROR(1005, "内部异常");
 
     /**

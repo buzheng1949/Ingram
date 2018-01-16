@@ -1,7 +1,9 @@
 package com.buzheng.me.api;
 
+import com.buzheng.me.context.admin.AdminShopContext;
 import com.buzheng.me.domain.entity.Shop;
 import com.buzheng.me.domain.query.ShopQuery;
+import com.buzheng.me.domain.vo.admin.AdminShopVO;
 
 import java.util.List;
 
@@ -24,7 +26,7 @@ public interface ShopApi {
      * @param shopQuery
      * @return
      */
-    boolean addShopInfo(ShopQuery shopQuery);
+    AdminShopContext addShopInfo(ShopQuery shopQuery);
 
     /**
      * 更新店铺信息

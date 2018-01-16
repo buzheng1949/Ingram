@@ -27,4 +27,27 @@ public class ShopRequest {
      * 店铺所在区域ID
      */
     private Integer areaId;
+
+    private Integer ownerId;
+
+    private Integer shopCategoryId;
+
+    private Integer parentCategoryId;
+
+    private String shopName;
+
+    private String shopDesc;
+
+    private String shopAddr;
+
+    private String phone;
+
+    private String shopImg;
+
+    private Double longitude;
+
+    private Double latitude;
+
+    private Integer priority;
+
 }
